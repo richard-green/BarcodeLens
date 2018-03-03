@@ -76,12 +76,14 @@ namespace BarcodeLens.WPF
                     {
                         timer.Stop();
                         var text = decoded.Text;
-                        Clipboard.SetText(text);
+                       
 
                         if (Regex.IsMatch(text, @"^(([a-zA-Z]{1})|([a-zA-Z]{1}[a-zA-Z]{1})|([a-zA-Z]{1}[0-9]{1})|([0-9]{1}[a-zA-Z]{1})|([a-zA-Z0-9][a-zA-Z0-9-_]{1,61}[a-zA-Z0-9]))\.([a-zA-Z]{2,6}|[a-zA-Z0-9-]{2,30}\.[a-zA-Z]{2,3})"))
                         {
                             text = "http://" + text;
                         }
+                        
+                         Clipboard.SetText(text);
 
                         if (Uri.TryCreate(text, UriKind.Absolute, out var uri) && uri.Scheme.AnyOf(StringComparison.CurrentCultureIgnoreCase, "http", "https"))
                         {
