@@ -1,0 +1,8 @@
+
+packages/
+bin/
+obj/
+.vs/
+*.suo
+*.ncrunchsolution
+*.csproj.user
