@@ -37,10 +37,15 @@ namespace BarcodeLens.WPF
         private void Window_MouseWheel(object sender, MouseWheelEventArgs e)
         {
             var cappedDelta = MathExt.Constrain(e.Delta, -30, 30);
-            this.Top -= cappedDelta / 2;
-            this.Left -= cappedDelta / 2;
-            this.Width = MathExt.Constrain(this.Width + cappedDelta, 200, 800);
-            this.Height = MathExt.Constrain(this.Height + cappedDelta, 200, 800);
+            var newWidth = MathExt.Constrain(this.Width + cappedDelta, 100, 800);
+            var newHeight = MathExt.Constrain(this.Height + cappedDelta, 100, 800);
+            if (newWidth != this.Width || newHeight != this.Height)
+            {
+                this.Left -= (newWidth - this.Width) / 2;
+                this.Top -= (newHeight - this.Height) / 2;
+                this.Width = newWidth;
+                this.Height = newHeight;
+            }
         }
 
         private void Window_MouseDoubleClick(object sender, MouseButtonEventArgs e)
