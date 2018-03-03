@@ -26,10 +26,10 @@
                 </ContextMenu>
             </Border.ContextMenu>
             <Border.Effect>
-                <DropShadowEffect BlurRadius="35" Direction="0" RenderingBias="Quality" ShadowDepth="1"  />
+                <DropShadowEffect BlurRadius="35" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="LightGray" />
             </Border.Effect>
             <Border.Background>
-                <SolidColorBrush Opacity="0.05" Color="Black" />
+                <SolidColorBrush Opacity="0.01" Color="Black" />
             </Border.Background>
         </Border>
     </Grid>

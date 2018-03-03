@@ -21,11 +21,8 @@ namespace BarcodeLens.WPF
             InitializeComponent();
 
             reader = new BarcodeReader();
-
-            var writer = new ZXing.BarcodeWriter();
-            writer.Format = BarcodeFormat.QR_CODE;
-            var bmp = writer.Write("BarcodeLens");
-            bmp.Save(@"D:\BarcodeLens.bmp");
+            reader.Options.TryHarder = true;
+            reader.AutoRotate = true;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
