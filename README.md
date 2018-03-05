@@ -1,5 +1,7 @@
 # BarcodeLens
 
+![Github All Releases](https://img.shields.io/github/downloads/richard-green/BarcodeLens/total.svg)
+
 A simple windows application for scanning a variety of barcode types.
 
 ![Demo.gif](https://raw.githubusercontent.com/richard-green/BarcodeLens/master/Demo.gif)
